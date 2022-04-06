@@ -1,6 +1,3 @@
-from itertools import count
-
-
 n = int(input())
 
 positives = []
