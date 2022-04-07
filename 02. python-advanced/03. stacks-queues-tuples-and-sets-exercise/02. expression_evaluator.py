@@ -53,25 +53,25 @@ for i, x in enumerate(expressions):
             expressions[i+1].insert(0, subtract(x))
         else:
             # if it's the last index just append the result and break
-            expressions.append(subtract(x))
+            expressions = subtract(x)
             break
     elif operator == "+":
         if expressions[i] != expressions[-1]:
             expressions[i+1].insert(0, sum(x))
         else:
-            expressions.append(sum(x))
+            expressions = sum(x)
             break
     elif operator == "*":
         if expressions[i] != expressions[-1]:
             expressions[i+1].insert(0, multiply(x))
         else:
-            expressions.append(multiply(x))
+            expressions = multiply(x)
             break
     elif operator == "/":
         if expressions[i] != expressions[-1]:
             expressions[i+1].insert(0, divide(x))
         else:
-            expressions.append(divide(x))
+            expressions = divide(x)
             break
 
-print(expressions[-1])
+print(expressions)
