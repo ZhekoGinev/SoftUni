@@ -38,7 +38,7 @@ def closer_to_center(x1, y1, x2, y2):
 
 
 # reverse logic from previous function
-# returns the farthes point
+# returns the farthest point
 def farthest_from_center(x1, y1, x2, y2):
     distance_1 = sqrt(x1**2 + y1**2)
     distance_2 = sqrt(x2**2 + y2**2)
