@@ -1,4 +1,4 @@
-# a huge lol @ softuni testing system for expecting
+# softuni testing system is expecting
 # set results to come in certain order every time
 # you may need to run the code in judge several times
 
