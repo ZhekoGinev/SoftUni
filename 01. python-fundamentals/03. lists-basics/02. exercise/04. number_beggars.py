@@ -1,8 +1,7 @@
-money = input().split(", ")
+money = [int(num) for num in input().split(", ")]
 number_of_beggars = int(input())
-money = [int(num) for num in money]
 # generate a list of beggars, each one with 0 as initial value
-beggars_profit = [0 for i in range(number_of_beggars)]
+beggars_profit = [0 for _ in range(number_of_beggars)]
 
 while len(money) > 0:
     for beggar in range(number_of_beggars):
