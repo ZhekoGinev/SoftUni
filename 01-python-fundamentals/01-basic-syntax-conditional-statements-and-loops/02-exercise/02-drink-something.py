@@ -1,5 +1,4 @@
 age = int(input())
-drink = ''
 if age > 21:
     drink = "whisky"
 elif age > 18:
