@@ -42,6 +42,8 @@ if len(repos) > 0:
     for i in repos:
         public_repos_url.append(i['html_url'])
     public_repos_url = '\n'.join(public_repos_url)
+else:
+    public_repos_url = None
 
 print()
 print(f"Информация за {r['name']}:\n")
