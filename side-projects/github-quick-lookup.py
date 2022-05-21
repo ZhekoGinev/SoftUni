@@ -45,8 +45,10 @@ if len(repos) > 0:
 else:
     public_repos_url = None
 
+name = username if r['name'] != "None" else r['name']
+
 print()
-print(f"Информация за {r['name']}:\n")
+print(f"Информация за {name}:\n")
 print(f"({r['html_url']})"+ '\n')
 print(f"Акаунтът е създаден на {date_day} {months[date_month]} {date_year}" + '\n')
 print(f"""Има {r['public_repos']} публични хранилища:
