@@ -45,7 +45,7 @@ if len(repos) > 0:
 else:
     public_repos_url = None
 
-name = username if r['name'] != "None" else r['name']
+name = username if r['name'] == None else r['name']
 
 print()
 print(f"Информация за {name}:\n")
