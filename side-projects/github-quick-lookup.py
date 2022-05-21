@@ -7,7 +7,7 @@ url = f"https://api.github.com/users/{username}"
 url_repos = f"https://api.github.com/users/{username}/repos"
 
 response = requests.get(url)
-r = response.json()
+data = response.json()
 status = response.status_code
 
 if status != 200:
@@ -33,19 +33,19 @@ months = {
 }
 
 # date created
-date = r['created_at'][:10]
+date = data['created_at'][:10]
 date_year, date_month, date_day = date.split('-')
 
 # repos
 public_repos_url = []
 if len(repos) > 0:
-    for i in repos:
-        public_repos_url.append(i['html_url'])
+    for url in repos:
+        public_repos_url.append(url['html_url'])
     public_repos_url = '\n'.join(public_repos_url)
 else:
     public_repos_url = None
 
-name = username if r['name'] == None else r['name']
+name = username if data['name'] == None else data['name']
 
 print()
 print(f"Информация за {name}:\n")
