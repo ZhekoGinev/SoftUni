@@ -49,7 +49,7 @@ name = username if data['name'] == None else data['name']
 
 print()
 print(f"Информация за {name}:\n")
-print(f"({r['html_url']})"+ '\n')
+print(f"({data['html_url']})"+ '\n')
 print(f"Акаунтът е създаден на {date_day} {months[date_month]} {date_year}" + '\n')
 print(f"""Има {r['public_repos']} публични хранилища:
 
