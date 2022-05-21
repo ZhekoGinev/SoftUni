@@ -3,7 +3,6 @@ n = int(input())
 courses = []
 
 for _ in range(n):
-    course = input()
-    courses.append(course)
+    courses.append(input())
 
 print(courses)
