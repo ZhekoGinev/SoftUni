@@ -1,6 +1,8 @@
 import requests, sys
 
-username = input('Моля въведете github username:  ')
+username = input('Моля въведете github username или exit:  ')
+if username == "exit":
+    sys.exit()
 
 url = f"https://api.github.com/users/{username}"
 
@@ -10,12 +12,27 @@ response = requests.get(url)
 data = response.json()
 status = response.status_code
 
-if status != 200:
-    print(f"Не е намерен акаунт с име {username}")
-    sys.exit()
-
 get_repos = requests.get(url_repos)
 repos = get_repos.json()
+
+
+# lazy copy-paste code, sry
+while status != 200:
+    print(f"Не е намерен акаунт с име {username}")
+    username = input('Моля въведете github username или exit:  ')
+    if username == "exit":
+        sys.exit()
+
+    url = f"https://api.github.com/users/{username}"
+
+    url_repos = f"https://api.github.com/users/{username}/repos"
+
+    response = requests.get(url)
+    data = response.json()
+    status = response.status_code
+
+    get_repos = requests.get(url_repos)
+    repos = get_repos.json()
 
 months = {
     '01': 'Януари',
