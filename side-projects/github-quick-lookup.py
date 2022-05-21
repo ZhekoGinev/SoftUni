@@ -43,7 +43,7 @@ if len(repos) > 0:
         public_repos_url.append(url['html_url'])
     public_repos_url = '\n'.join(public_repos_url)
 else:
-    public_repos_url = None
+    public_repos_url = "Such empty. Wow!"
 
 name = username if data['name'] == None else data['name']
 
