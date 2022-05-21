@@ -68,6 +68,6 @@ print()
 print(f"Информация за {name}:\n")
 print(f"({data['html_url']})\n")
 print(f"Акаунтът е създаден на {date_day} {months[date_month]} {date_year}\n")
-print(f"""Има {data['public_repos']} публични хранилища:
+print(f"""Брой публични хранилища: {data['public_repos']}
 
 {public_repos_url}""")
