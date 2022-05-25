@@ -1,4 +1,5 @@
 from collections import defaultdict
+
 elements = input().lower().split()
 elements_dict = defaultdict(int)
 

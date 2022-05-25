@@ -1,4 +1,5 @@
 from collections import defaultdict
+
 number_of_words = int(input())
 synonym_dict = defaultdict(list)
 

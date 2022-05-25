@@ -1,5 +1,5 @@
 data = {}
-course = ""
+
 while True:
     command = input()
     if ":" in command:

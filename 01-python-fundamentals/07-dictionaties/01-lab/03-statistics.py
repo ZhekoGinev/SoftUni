@@ -13,7 +13,8 @@ while True:
         else:
             stock[product] = quantity
 
-total_quantity = sum([quantity for quantity in stock.values()])
+total_quantity = sum(stock.values())
+
 print("Products in stock:")
 for product, quantity in stock.items():
     print(f"- {product}: {quantity}")
