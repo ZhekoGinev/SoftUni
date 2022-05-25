@@ -1,6 +1,9 @@
 year = int(input())
-for i in range(year+1, year*101):
-    numstring = str(i)
-    if len(set(numstring)) == len(str(year)):
-        print(i)
+n = year
+
+while True:
+    n += 1
+    numstring = str(n)
+    if len(set(str(n))) == len(str(year)):
+        print(n)
         break
