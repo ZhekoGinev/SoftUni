@@ -10,15 +10,11 @@ for item in items_bought:
     item = item.split("->")
     item_type = item[0]
     item_price = float(item[-1])
-    if item_type == "Clothes" and item_price <= 50 and item_price <= budget:
-        items_bought_prices.append(item_price)
-        items_sold.append(item_price * 1.4)
-        budget -= item_price
-    elif item_type == "Shoes" and item_price <= 35 and item_price <= budget:
-        items_bought_prices.append(item_price)
-        items_sold.append(item_price * 1.4)
-        budget -= item_price
-    elif item_type == "Accessories" and item_price <= 20.50 and item_price <= budget:
+    if item_price <= budget and (
+        (item_type == "Clothes" and item_price <= 50)
+        or (item_type == "Shoes" and item_price <= 35)
+        or (item_type == "Accessories" and item_price <= 20.50)
+    ):
         items_bought_prices.append(item_price)
         items_sold.append(item_price * 1.4)
         budget -= item_price
