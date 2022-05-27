@@ -2,9 +2,7 @@ str_a = input()
 str_b = input()
 
 for index, char in enumerate(str_b):
-    if str_a[index] == str_b[index]:
-        continue
-    else:
+    if str_a[index] != str_b[index]:
         str_a = str_a[:index] + str_b[index] + str_a[index + 1:]
         print(str_a)
 
