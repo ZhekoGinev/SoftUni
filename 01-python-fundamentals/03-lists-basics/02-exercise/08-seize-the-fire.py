@@ -7,10 +7,10 @@ for fire in fires:
     fire_type, cell_value = fire.split(" = ")
     cell_value = int(cell_value)
     cell_effort = cell_value * 0.25
-    if (
-        (fire_type == 'High' and 81 <= cell_value <= 125 and total_water >= cell_value)
-        or (fire_type == 'Medium' and 51 <= cell_value <= 80 and total_water >= cell_value)
-        or (fire_type == 'Low' and 1 <= cell_value <= 50 and total_water >= cell_value)
+    if total_water >= cell_value and (
+        (fire_type == 'High' and 81 <= cell_value <= 125)
+        or (fire_type == 'Medium' and 51 <= cell_value <= 80)
+        or (fire_type == 'Low' and 1 <= cell_value <= 50)
     ):
         total_water -= cell_value
         total_effort += cell_effort
