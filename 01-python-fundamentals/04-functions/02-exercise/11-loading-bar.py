@@ -7,11 +7,11 @@ def loading_bar(number):
     for _ in range(number_of_bars):
         loading_bar.pop()
         loading_bar.insert(0, "%")
-    loading = "".join(loading_bar)
+    loading_bar = "".join(loading_bar)
     if number < 100:
-        return f"{number}% [{loading}]\nStill loading..."
+        return f"{number}% [{loading_bar}]\nStill loading..."
     else:
-        return f"100% Complete!\n[{loading}]"
+        return f"100% Complete!\n[{loading_bar}]"
 
 
 print(loading_bar(number))
