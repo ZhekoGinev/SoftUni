@@ -4,7 +4,7 @@ people = deque(input().split())
 k = int(input())
 executed = []
 
-while len(people) > 0:
+while people:
     people.rotate(-k + 1)
     executed.append(people.popleft())
 
