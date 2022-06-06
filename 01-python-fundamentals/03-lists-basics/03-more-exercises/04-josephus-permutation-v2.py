@@ -5,7 +5,7 @@ k = int(input())
 executed = []
 
 while people:
-    people.rotate(-k + 1)
-    executed.append(people.popleft())
+    people.rotate(-k)
+    executed.append(people.pop())
 
 print(f"[{','.join(executed)}]")
