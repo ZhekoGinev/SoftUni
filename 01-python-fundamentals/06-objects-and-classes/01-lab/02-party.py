@@ -14,8 +14,7 @@ while True:
     name = input()
     if name == "End":
         break
-    else:
-        party.add(name)
+    party.add(name)
 
 print(f"Going: {', '.join(party.people)}")
 print(f"Total: {len(party.people)}")

@@ -4,14 +4,14 @@ while True:
     products = input()
     if products == "statistics":
         break
+
+    products = products.split(': ')
+    product = products[0]
+    quantity = int(products[1])
+    if product in stock:
+        stock[product] += quantity
     else:
-        products = products.split(': ')
-        product = products[0]
-        quantity = int(products[1])
-        if product in stock:
-            stock[product] += quantity
-        else:
-            stock[product] = quantity
+        stock[product] = quantity
 
 total_quantity = sum(stock.values())
 
