@@ -7,6 +7,5 @@ for fill in range(number_of_fills):
     if water + filled > CAPACITY:
         print("Insufficient capacity!")
         continue
-    else:
-        filled += water
+    filled += water
 print(filled)
