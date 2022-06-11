@@ -17,7 +17,7 @@ while True:
 
         # merge the element at position start with the next one 
         # end minus start number of times
-        for i in range(start, end):
+        for _ in range(start, end):
             data[start] += data.pop(start + 1)
 
     elif action == "divide":
