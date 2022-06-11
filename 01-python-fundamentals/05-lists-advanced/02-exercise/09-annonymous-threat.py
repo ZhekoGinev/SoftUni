@@ -16,7 +16,7 @@ while True:
             end = len(data) - 1
 
         # merge the element at position start with the next one 
-        # end minus start number of times
+        # end number of times
         for _ in range(start, end):
             data[start] += data.pop(start + 1)
 
