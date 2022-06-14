@@ -10,15 +10,15 @@ while True:
         print(" ".join(elements))
         break
 
-    if not elements or (data == "end" and not elements):
+    if not elements:
         print(f"You have won in {moves} turns!")
         break
 
     moves += 1
     first, second = [int(i) for i in data.split()]
 
-    bigger = max(first, second)
-    smaller = min(first, second)
+    bigger = max(first, second) # since I'm using pop() I need to
+    smaller = min(first, second) # remove the bigger index first
 
     if ( # same index or out of bound
         first == second
