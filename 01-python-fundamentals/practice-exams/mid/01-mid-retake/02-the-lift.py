@@ -2,9 +2,9 @@ people = [1] * int(input())
 lifts = [int(i) for i in input().split()]
 max_capacity = len(lifts) * 4
 
-for i, _ in enumerate(lifts):
-    while lifts[i] < 4 and people:
-        lifts[i] += people.pop()
+for lift, _ in enumerate(lifts):
+    while lifts[lift] < 4 and people:
+        lifts[lift] += people.pop()
     if not people:
         break
 
