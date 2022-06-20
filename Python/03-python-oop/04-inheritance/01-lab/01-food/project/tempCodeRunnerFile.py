@@ -1,1 +1,0 @@
-e.name, apple.expiration_date)
