@@ -1,8 +1,6 @@
 class Party:
     def __init__(self) -> None:
-        pass
-
-    people = []
+        self.people = []
 
     def add(self, name):
         self.people.append(name)
