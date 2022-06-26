@@ -43,7 +43,7 @@ elif len(points) > 1:
 
     # this test case is not checked in judge but it's possible
     # to get an error with certain inputs so I'm including it
-    if len(clusters) == 0 and len(points) == 2:
+    if len(clusters) == 0 and len(points) > 0:
         print(1)  # remove this and try input 2 => . - => - .
         exit()    # it still passes judge but it will crash in the real world
 
