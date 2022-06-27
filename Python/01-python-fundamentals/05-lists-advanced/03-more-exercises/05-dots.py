@@ -61,9 +61,7 @@ elif len(points) > 1:
             else:
                 temp_stack.append(r)
 
-        remaining_elements = temp_stack
-
         result.append(len(first_element))
-        clusters = remaining_elements
+        clusters = temp_stack
 
     print(max(result))
