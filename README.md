@@ -4,4 +4,4 @@ This is created to track my personal code from the SoftUni software engineering 
 
 Problem descriptions will be linked from the official website and are available only for registered users.  
 !important - problems are updated regularly so the solutions may not work in the future.
-<img src="https://api.visitorbadge.io/api/visitors?path=zhekoginev&label=visitors&labelColor=%23595959&countColor=%2347c119&style=flat" height=0>
+
