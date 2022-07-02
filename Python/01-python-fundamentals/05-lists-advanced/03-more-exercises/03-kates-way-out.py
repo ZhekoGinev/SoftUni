@@ -23,19 +23,19 @@ while True:
         break
 
     # check adjacent squares and move if empty
-    if matrix[row - 1][col] == " ":   # up and [row - 1, col]:
+    if matrix[row - 1][col] == " ":  # up
         pos = [row - 1, col]
         matrix[pos[0]][pos[1]] = "#"
         moves += 1
-    elif matrix[row + 1][col] == " " and [row + 1, col]:  # down
+    elif matrix[row + 1][col] == " ":  # down
         pos = [row + 1, col]
         matrix[pos[0]][pos[1]] = "#"
         moves += 1
-    elif matrix[row][col - 1] == " " and [row, col - 1]:  # left
+    elif matrix[row][col - 1] == " ":  # left
         pos = [row, col - 1]
         matrix[pos[0]][pos[1]] = "#"
         moves += 1
-    elif matrix[row][col + 1] == " " and [row, col + 1]:  # right
+    elif matrix[row][col + 1] == " ":  # right
         pos = [row, col + 1]
         matrix[pos[0]][pos[1]] = "#"
         moves += 1

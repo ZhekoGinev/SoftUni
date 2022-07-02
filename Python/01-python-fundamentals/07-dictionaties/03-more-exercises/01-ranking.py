@@ -6,32 +6,32 @@ while True:
     command = input()
     if command == "end of contests":
         break
-    else:
-        tokens = command.split(":")
-        contest = tokens[0]
-        password = tokens[1]
-        contests[contest] = password
+
+    tokens = command.split(":")
+    contest = tokens[0]
+    password = tokens[1]
+    contests[contest] = password
 
 while True:
     data = input()
     if data == "end of submissions":
         break
-    else:
-        tokens = data.split("=>")
-        contest_name = tokens[0]
-        password = tokens[1]
-        username = tokens[2]
-        points = int(tokens[3])
 
-        if contest_name in contests and contests[contest_name] == password:
-            if username not in users:
-                users[username] = {contest_name: points}
+    tokens = data.split("=>")
+    contest_name = tokens[0]
+    password = tokens[1]
+    username = tokens[2]
+    points = int(tokens[3])
+
+    if contest_name in contests and contests[contest_name] == password:
+        if username not in users:
+            users[username] = {contest_name: points}
+        else:
+            if contest_name not in users[username]:
+                users[username][contest_name] = points
             else:
-                if contest_name not in users[username]:
+                if users[username][contest_name] < points:
                     users[username][contest_name] = points
-                else:
-                    if users[username][contest_name] < points:
-                        users[username][contest_name] = points
 
 for user, course in users.items():
     score = 0
