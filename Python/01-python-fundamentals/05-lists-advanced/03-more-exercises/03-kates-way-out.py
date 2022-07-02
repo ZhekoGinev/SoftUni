@@ -23,7 +23,7 @@ while True:
         break
 
     # check adjacent squares and move if empty
-    if matrix[row - 1][col] == " " and [row - 1, col]:  # up
+    if matrix[row - 1][col] == " ":   # up and [row - 1, col]:
         pos = [row - 1, col]
         matrix[pos[0]][pos[1]] = "#"
         moves += 1
