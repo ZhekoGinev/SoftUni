@@ -1,0 +1,7 @@
+data = input()
+numbers = (num for num in data if num.isdigit())
+letters = (letter for letter in data if letter.isalpha())
+symbols = (x for x in data if not x.isalnum())
+print(*numbers, sep="")
+print(*letters, sep="")
+print(*symbols, sep="")
