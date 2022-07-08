@@ -6,9 +6,8 @@ while True:
     resource = input()
     if resource == "stop":
         break
-    else:
-        quantity = int(input())
-        resources[resource] += quantity
+    quantity = int(input())
+    resources[resource] += quantity
 
 for r, q in resources.items():
     print(f"{r} -> {q}")

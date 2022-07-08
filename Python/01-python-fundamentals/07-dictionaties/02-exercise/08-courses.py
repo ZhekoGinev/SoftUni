@@ -6,9 +6,8 @@ while True:
     data = input()
     if data == "end":
         break
-    else:
-        course, student = data.split(" : ")
-        courses[course].append(student)
+    course, student = data.split(" : ")
+    courses[course].append(student)
 
 for course, students in courses.items():
     print(f"{course}: {len(students)}")

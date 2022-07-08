@@ -1,5 +1,4 @@
 number_of_cars = int(input())
-
 parking = {}
 
 for _ in range(number_of_cars):
@@ -11,8 +10,7 @@ for _ in range(number_of_cars):
             parking[username] = license_plate
             print(f"{username} registered {license_plate} successfully")
         else:
-            print(
-                f"ERROR: already registered with plate number {license_plate}")
+            print(f"ERROR: already registered with plate number {license_plate}")
     elif command[0] == "unregister":
         if username not in parking:
             print(f"ERROR: user {username} not found")
