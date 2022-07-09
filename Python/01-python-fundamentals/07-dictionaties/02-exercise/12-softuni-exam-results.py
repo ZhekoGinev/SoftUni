@@ -15,7 +15,7 @@ while True:
 
     if username in results and language == "banned":
         results.pop(username)
-    elif language != "banned":
+    else:
         results[username].append(int(points))
         submissions[language] += 1
 
