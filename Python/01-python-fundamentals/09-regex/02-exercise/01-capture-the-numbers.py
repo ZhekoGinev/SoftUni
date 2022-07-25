@@ -10,8 +10,8 @@ while True:
     if line:
         matches = re.findall(pattern, line)
         res += matches
+        line = input()
     else:
         break
-    line = input()
 
 print(*res)
