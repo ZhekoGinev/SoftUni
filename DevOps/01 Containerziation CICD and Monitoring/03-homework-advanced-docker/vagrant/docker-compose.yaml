@@ -1,0 +1,19 @@
+version: '3.9'
+
+services:
+
+  db:
+    image: zhekoginev/mariadb:0.1
+    environment:
+      MYSQL_ROOT_PASSWORD: Password1
+    deploy:
+      replicas: 1
+      placement:
+        constraints: [node.role == manager]
+
+  web:
+    image: zhekoginev/php-nginx:0.2
+    ports:
+      - "80:80"
+    deploy:
+      replicas: 3

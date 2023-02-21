@@ -1,0 +1,54 @@
+Vagrant.configure("2") do |config|
+
+    # Define the token variable
+    token_script = <<-SCRIPT
+        #initialize Docker Swarm and retrieve the join token for the workers
+        docker swarm init --advertise-addr 192.168.99.100
+        TOKEN=$(docker swarm join-token -q worker)
+        echo $TOKEN > /vagrant/token.txt
+    SCRIPT
+
+    config.vm.define "docker1" do |docker1|
+        docker1.vm.box="jginev/bun2serv"
+        docker1.vm.hostname = "docker1.do1.lab"
+        docker1.vm.network "private_network", ip: "192.168.99.100"
+		config.vm.network "forwarded_port", guest: 80, host: 8080
+        docker1.vm.provision "shell", path: "docker-setup.sh"
+        docker1.vm.provision "shell", inline: token_script
+		
+        docker1.vm.provider :virtualbox do |vb|
+            vb.customize ["modifyvm", :id, "--memory", "1536"]
+        end
+    end
+	
+    config.vm.define "docker2" do |docker2|
+        docker2.vm.box="jginev/bun2serv"
+        docker2.vm.hostname = "docker2.do1.lab"
+        docker2.vm.network "private_network", ip: "192.168.99.101"
+		config.vm.network "forwarded_port", guest: 80, host: 8080
+        docker2.vm.provision "shell", path: "docker-setup.sh"
+		docker2.vm.provision "shell", inline: <<-SHELL
+			docker swarm join --token $(cat /vagrant/token.txt) --advertise-addr 192.168.99.101 192.168.99.100:2377
+		SHELL
+		
+        docker2.vm.provider :virtualbox do |vb|
+            vb.customize ["modifyvm", :id, "--memory", "1536"]
+        end
+    end
+	
+    config.vm.define "docker3" do |docker3|
+        docker3.vm.box="jginev/bun2serv"
+        docker3.vm.hostname = "docker3.do1.lab"
+        docker3.vm.network "private_network", ip: "192.168.99.102"
+		config.vm.network "forwarded_port", guest: 80, host: 8080
+        docker3.vm.provision "shell", path: "docker-setup.sh"
+		docker3.vm.provision "shell", inline: <<-SHELL
+			docker swarm join --token $(cat /vagrant/token.txt) --advertise-addr 192.168.99.102 192.168.99.100:2377
+		SHELL
+        
+        docker3.vm.provider :virtualbox do |vb|
+            vb.customize ["modifyvm", :id, "--memory", "1536"]
+        end
+    end
+  
+  end
